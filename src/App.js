@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { ListContainer } from './components'
 
-function App() {
+const App = () => {
+  const [list, setList] = useState([
+    'Shopping in Barcelona',
+    'Famous Shopping Streets',
+    'Shopping malls',
+    'Markets',
+    'Opening times',
+    'Sales Tax Refunds',
+    'You may also be interested in',
+    'Where to Stay'
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='w-full h-screen flex justify-center items-center'>
+      <ListContainer list={list} setList={setList} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
